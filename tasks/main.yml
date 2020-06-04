@@ -28,7 +28,7 @@
 
 - name: Put .htpasswd in web-root
   template:
-    src: "htpasswd"
+    src: "htpasswd.j2"
     dest: /var/www/{{ inventory_hostname }}/web-docs/.htpasswd
     owner: www-data
     group:  www-data
