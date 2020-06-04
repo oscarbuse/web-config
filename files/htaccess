@@ -1,0 +1,5 @@
+AuthUserFile .htpasswd
+AuthGroupFile /dev/null
+AuthName Admin
+AuthType Basic
+require valid-user
