@@ -21,7 +21,7 @@
 - name: Put .htaccess in web-root
   copy:
     src: "htaccess"
-    dest: /var/www/{{ inventory_hostname }}/web-docs/.htaccess
+    dest: /var/www/html/.htaccess
     owner: www-data
     group:  www-data
     mode: '0640'
@@ -29,7 +29,7 @@
 - name: Put .htpasswd in web-root
   template:
     src: "htpasswd.j2"
-    dest: /var/www/{{ inventory_hostname }}/web-docs/.htpasswd
+    dest: /var/www/html/web-docs/.htpasswd
     owner: www-data
     group:  www-data
     mode: '0640'
