@@ -1,23 +1,4 @@
 ---
-- name: Remove the user 'vagrant'
-  user:
-    name: vagrant
-    state: absent
-    remove: yes
-
-- name: Remove sudo file for user vagratn
-  file:
-    path: /etc/sudoers.d/99_vagrant
-    state: absent
-
-- name: Make sure DocumentRoot exists
-  file: 
-    path: "/var/www/{{ inventory_hostname }}/web-docs"
-    state: directory
-    owner: www-data
-    group:  www-data
-    mode: '0750'
-
 - name: Put .htaccess in web-root
   copy:
     src: "htaccess"
