@@ -26,10 +26,13 @@
     group:  www-data
     mode: '0640'
 
-- name: Put .htpasswd in web-root
-  template:
-    src: "htpasswd.j2"
-    dest: /var/www/html/.htpasswd
-    owner: www-data
-    group:  www-data
-    mode: '0640'
+# Add a user to a password file and ensure permissions are set
+- htpasswd:
+    path: /etc/nginx/passwdfile
+    name: "{{ basic_auth_user }}
+    password: "{{ basic_auth_password }}"
+    owner: root
+    group: www-data
+    mode: 0640
+
+

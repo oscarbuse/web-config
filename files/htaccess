@@ -1,5 +1,4 @@
-AuthUserFile .htpasswd
-AuthGroupFile /dev/null
+AuthUserFile /etc/nginx/passwdfile
 AuthName Admin
 AuthType Basic
 require valid-user
