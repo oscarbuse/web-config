@@ -10,7 +10,7 @@
 # Add a user to a password file and ensure permissions are set
 - htpasswd:
     path: /etc/nginx/passwdfile
-    name: "{{ basic_auth_user }}
+    name: "{{ basic_auth_user }}"
     password: "{{ basic_auth_password }}"
     owner: root
     group: www-data
